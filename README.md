@@ -1,5 +1,3 @@
-# nbkr.github.io
-
-This is a test! Why do I bother with a sitegenerator, when a bunch of .md files is all I need?
+Articles about what I'm working on. Youtube People would call that a second channel I guess.
 
  * [PostSRSD and Packer](postfixsrsd-and-packer.md)
