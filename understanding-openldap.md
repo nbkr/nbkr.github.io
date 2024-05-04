@@ -15,7 +15,7 @@ what ever username that provides. There are two options for the surrounding syst
 be the common name of your client certificate. The second is Unix sockets, which means your username will be based on your UID/GID on the system.
 
 The Ubuntu package, and probably all others too, of OpenLDAP, configures access to the configuration database to be allowed for UID/GID = 0. This
-of course only works with Unix sockets, so it is limited to the server that OpenLDAP runs on. Which does make sense, after all you don't necessarly
+of course only works with Unix sockets, so it is limited to the server that OpenLDAP runs on. Which does make sense, after all you don't necessarily
 want to open the configuration to the outside. So you can configure the server from the system it runs on via:
 
     # ldapmodify -Y EXTERNAL -H ldapi:/// -f <you config file.ldif>
