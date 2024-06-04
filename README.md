@@ -1,4 +1,4 @@
-Articles about what I'm working on. Youtube People would call that a second channel I guess.
+Shorter articles and howtos I'm found necessary to write.
 
  * [PostSRSD and Packer](postfixsrsd-and-packer.md)
  * [Understanding OpenLDAP](understanding-openldap.md)
