@@ -5,7 +5,7 @@ Github Actions is an easy and simple way to automate things about your software 
 be a bit overwhelming. Let me give a simple example to get you started.
 
 ## The background
-I run a personal website at https://benjaminfleckenstein.name - not special,
+I run a personal website at https://benjaminfleckenstein.name - nothing special,
 just a few links and articles here and there. The site is stored in a (private)
 Github repository and consists of markdown files, images, etc and template
 files. I use a [small script](https://github.com/nbkr/sitegenerator2) to turn
@@ -19,7 +19,7 @@ everytime I commit something.
 ## Howto
 * First I create a directory `.github/workflows` within my content repository.
 * In that I put a file called `main.yml` with the following content:
-  ```
+```
 name: Build
 on: [workflow_dispatch, push]
 jobs:
@@ -45,7 +45,7 @@ jobs:
          remote_path: /data/www/benjaminfleckenstein/droot/
          sftp_only: true
          ssh_private_key: ${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}
-  ```
+```
 * I add a secret to my repository called SFTP_BENJAMINFLECKENSTEIN_KEY that contains the private SSH key needed to access the documentroot on my server.
 * Done
 
