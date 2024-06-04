@@ -24,7 +24,7 @@ name: Build
 on: [workflow_dispatch, push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
      - uses: actions/checkout@v4
        with: 
@@ -56,6 +56,7 @@ That's just the location where Github expects workflows or actions. Every .yml f
 
 ### The main.yml
 Let's go through every line.
+
 ---
 ```
 name: Build
