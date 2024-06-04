@@ -45,7 +45,7 @@ jobs:
          local_path: ./website/build/*
          remote_path: /data/www/benjaminfleckenstein/droot/
          sftp_only: true
-         ssh_private_key: ${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}
+         ssh_private_key: {% raw %}${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}{% endraw %}
 ```
 
 * I add a secret to my repository called SFTP_BENJAMINFLECKENSTEIN_KEY that contains the private SSH key needed to access the documentroot on my server.
