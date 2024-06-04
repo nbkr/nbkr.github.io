@@ -56,12 +56,13 @@ That's just the location where Github expects workflows or actions. Every .yml f
 
 ### The main.yml
 Let's go through every line.
+---
 ```
 name: Build
 ```
 Defines the name of the action. Up to you.
 
-
+---
 ```
 on: [workflow_dispatch, push]
 ```
@@ -69,6 +70,7 @@ The triggers, aka when that workflow should start. There are [dozends of trigger
 just put them in a list, like in the example. `push` triggers, well when you push something to the repo. `workflow_dispatch` let's you start the workflow manually. If you are testing the new
 workflow you probably don't want to use push right from the beginning. After all the main.yml is part of the repo, so every small change would trigger the workflow.
 
+---
 ```
 jobs:
   build:
@@ -76,6 +78,7 @@ jobs:
 This part defines the jobs that the workflow should actually run. You can have multiple ones, by default they run in parallel. As building and deploying my site is done one 
 after the other I go with just one job. `build` is the identifier of the job. You can call it - within reason - anything you like.
 
+---
 ```
     runs-on: ubuntu-24.04
 ```
@@ -89,12 +92,14 @@ Version 24.04. You can also specify `ubuntu-latest` if you don't care about the
 specifics. 
 
 
+---
 ```
     steps:
 ```
 Now we are getting somewhere. `steps` is the section where the actuall commands a specified. `steps` is a list, so every step starts with a hyphen.
 
 
+---
 ```
      - uses: actions/checkout@v4
        with: 
@@ -127,6 +132,7 @@ to 'this one'. Aka the same one the main.yml workflow file is in. `path` is, aga
 So the contents of this very repository can be found at './website' on the runner.
 
 
+---
 ```
      - run: 'python3 -m venv venv'
      - run: 'source venv/bin/activate'
@@ -138,6 +144,7 @@ is python script that requires some modules. So I create a virtual python enviro
 install all required modules (third line) and finally run the script with it's required parameters. If it works there will
 be a new directory on the runner called './website/build' that contains my personal site. 
 
+---
 ```
      - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
        with:
