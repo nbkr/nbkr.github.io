@@ -166,7 +166,7 @@ a private key to access my webspace. But the main.yml file is part of the reposi
 copy credentials there. Who knows, maybe I do make the repo public one day, or someone else is helping with the site you shouldn't be
 able to access the server. So putting the key directly into the file is not good. 
 
-Instead I'm using Github Secrets. It's essentically a storage for strings that will replace the <nobr>`\${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}`</nobr>
+Instead I'm using Github Secrets. It's essentically a storage for strings that will replace the <nobr>`{% raw %}${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}{% endraw %}`</nobr>
 variable once the workflow runs. The secret therefore won't show up in the main.yml and is - hopefully - kept safe by Github.
 
 You can find the secrets in the 'settings' tab of your repository. There are different 'levels' of secrets. Repository secrets and Environment secrets.
