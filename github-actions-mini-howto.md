@@ -19,6 +19,7 @@ everytime I commit something.
 ## Howto
 * First I create a directory `.github/workflows` within my content repository.
 * In that I put a file called `main.yml` with the following content:
+
 ```
 name: Build
 on: [workflow_dispatch, push]
@@ -46,6 +47,7 @@ jobs:
          sftp_only: true
          ssh_private_key: ${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}
 ```
+
 * I add a secret to my repository called SFTP_BENJAMINFLECKENSTEIN_KEY that contains the private SSH key needed to access the documentroot on my server.
 * Done
 
@@ -164,7 +166,7 @@ a private key to access my webspace. But the main.yml file is part of the reposi
 copy credentials there. Who knows, maybe I do make the repo public one day, or someone else is helping with the site you shouldn't be
 able to access the server. So putting the key directly into the file is not good. 
 
-Instead I'm using Github Secrets. It's essentically a storage for strings that will replace the <nobr>`$\{\{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY \}\}`</nobr>
+Instead I'm using Github Secrets. It's essentically a storage for strings that will replace the <nobr>`\${{ secrets.SFTP_BENJAMINFLECKENSTEIN_KEY }}`</nobr>
 variable once the workflow runs. The secret therefore won't show up in the main.yml and is - hopefully - kept safe by Github.
 
 You can find the secrets in the 'settings' tab of your repository. There are different 'levels' of secrets. Repository secrets and Environment secrets.
