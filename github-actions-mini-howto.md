@@ -74,11 +74,10 @@ jobs:
   build:
 ```
 This part defines the jobs that the workflow should actually run. You can have multiple ones, by default they run in parallel. As building and deploying my site is done one 
-after the other I go with just one job. `build` is the identifier of the job. You can call - within reason - anything you like.
+after the other I go with just one job. `build` is the identifier of the job. You can call it - within reason - anything you like.
 
 ```
     runs-on: ubuntu-24.04
-
 ```
 The jobs need to be executed somewhere. That somewhere is called a runner and
 it's esentcially a virtual machine. What you can do, depends on the operating
@@ -116,7 +115,7 @@ value would checkout https://github.com/nbkr/sitegenerator2
 `path` specifies where the repo will be checkout out to on the runner. This
 time on the directory `sitegenerator2`. Nicely tucked away in its on folder.
 
-
+---
 ```
      - uses: actions/checkout@v4
        with:
