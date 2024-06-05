@@ -148,12 +148,12 @@ found at ‘./website’ on the runner.
 - run: 'pip3 install -r ./sitegenerator2/requirements.txt'
 - run: './sitegenerator2/generator.py ./website gen'
 ```
-Now it gets a bit simpler. Each `run:` line is a command that is run as is on the
-runner. The sitegenerator2 is a Python script that requires some modules. So I
-create a virtual Python environment (first line), activate it (second line),
-install all required modules (third line), and finally run the script with its
-required parameters. If it works, there will be a new directory on the runner
-called ‘./website/build’ that contains my personal site.
+Now it gets a bit simpler. Each `run:` line is a command that is executed as is
+on the runner. The sitegenerator2 is a Python script that requires some
+modules. So I create a virtual Python environment (first line), activate it
+(second line), install all required modules (third line), and finally run the
+script with its required parameters. If it works, there will be a new directory
+on the runner called ‘./website/build’ that contains my personal site.
 
 ---
 ```
