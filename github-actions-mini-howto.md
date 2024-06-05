@@ -174,7 +174,7 @@ This specific action requires several parameters like username and destination.
 The ssh_private_key is a bit of a problem. I need a private key to access my
 web space. But the main.yml file is part of the repository. Sure, it’s private,
 but I don’t really want to copy credentials there. Who knows, maybe I will make
-the repo public one day, or someone else helping with the site shouldn’t be
+the repo public one day, or someone else helping with the site who shouldn’t be
 able to access the server. So putting the key directly into the file is not
 good.
 
